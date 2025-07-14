@@ -92,6 +92,7 @@ npm start
 ### ✅ Register
 
 **POST /api/auth/signup**
+
 Content-Type: application/json
 
 {
@@ -103,6 +104,7 @@ Content-Type: application/json
 ### ✅ Login
 
 **POST /api/v1/auth/login**
+
 Content-Type: application/json
 
 {
