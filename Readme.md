@@ -29,27 +29,48 @@ Authentication is implemented using **JWT tokens stored in HTTP-only cookies** f
 
 ## 📁 Folder Structure
 
-notes-api/
+notes-api/  
+
 ├── controllers/
-│ ├── auth.controller.js
-│ └── note.controller.js
+
+  │ ├── auth.controller.js
+
+  │ └── note.controller.js
+
 ├── models/
-│ ├── user.model.js
-│ └── note.model.js
+
+  │ ├── user.model.js
+
+  │ └── note.model.js
+
 ├── routes/
-│ ├── auth.route.js
-│ └── note.route.js
+
+  │ ├── auth.route.js
+
+  │ └── note.route.js
+
 ├── middleware/
-│ └── verifyJWT.js
+
+  │ └── verifyJWT.js
+
 ├── lib/
-│ └── utils.js
+
+  │ └── utils.js
+
 ├── db/
-│ └── index.js
+
+  │ └── index.js
+
 ├── .env
+
 ├── .env.sample
+
 ├── constants.js
+
 ├── server.js
+
 ├── package.json
+
 └── README.md
 
 ---
@@ -92,6 +113,7 @@ npm start
 ### ✅ Register
 
 **POST /api/auth/signup**
+
 Content-Type: application/json
 
 {
@@ -103,6 +125,7 @@ Content-Type: application/json
 ### ✅ Login
 
 **POST /api/v1/auth/login**
+
 Content-Type: application/json
 
 {
