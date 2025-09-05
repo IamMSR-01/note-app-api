@@ -4,22 +4,22 @@ import { Note } from "../models/note.model.js";
 // function to create a note 
 export const createNote = async (req, res) => {
     // take input {title, content} to create a note
-  const { title, content } = req.body;
+    const { title, content } = req.body;
 
-  try {
-    // create a note 
-    const note = await Note.create({
-      user: req.user._id,
-      title,
-      content,
-    });
+    try {
+        // create a note 
+        const note = await Note.create({
+            user: req.user._id,
+            title,
+            content,
+        });
 
-    // return the note as response
-    res.status(201).json(note);
-  } catch (error) {
-    // handle the error
-    res.status(500).json({ message: error.message });
-  }
+        // return the note as response
+        res.status(201).json(note);
+    } catch (error) {
+        // handle the error
+        res.status(500).json({ message: error.message });
+    }
 };
 
 
@@ -42,10 +42,10 @@ export const updateNotes = async (req, res) => {
 
     try {
         // find the note by using user id
-        const note = await Note.findOne({ _id: id, user: req.user._id});
-        if(!note) return res.status(404).json({message: "Note not found"})
+        const note = await Note.findOne({ _id: id, user: req.user._id });
+        if (!note) return res.status(404).json({ message: "Note not found" })
 
-            // if note 
+        // if note 
         note.title = title || note.title
         note.content = content || note.content
 
@@ -63,9 +63,9 @@ export const deleteNote = async (req, res) => {
     try {
         const note = await Note.findOneAndDelete({ _id: id, user: req.user._id })
 
-        if(!note) return res.status(404).json({ message: "Note note found"});
+        if (!note) return res.status(404).json({ message: "Note note found" });
 
-        res.status(200).json({ message: "Note deleted successfully"})
+        res.status(200).json({ message: "Note deleted successfully" })
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
